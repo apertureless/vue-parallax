@@ -1,4 +1,7 @@
 # vue-parallaxy
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/vue-parallaxy)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/apertureless/vue-parallax/blob/master/LICENSE.txt)
+![npm dependencies](https://david-dm.org/apertureless/vue-parallax.svg)
 
 Is a compontent for fast 60fps parallax scroll effects in vue 2.
 
