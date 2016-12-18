@@ -4,7 +4,7 @@
     <div style="position: relative; z-index: 9999; background-color: #fff;">
       <h1 style="margin:0;">Parallax Effect</h1>
       <parallax>
-        <img src="./static/img/pexels-photo-241307.jpeg">
+        <img src="static/img/pexels-photo-241307.jpeg">
       </parallax>
     </div>
     <div style="background-color: #fff; height: 100vh;"></div>
@@ -12,7 +12,7 @@
 
     <div style="position: relative;">
       <parallax :fixed="true">
-        <img src="./static/img/pexels-photo-196416.jpeg">
+        <img src="static/img/pexels-photo-196416.jpeg">
       </parallax>
     <div>
 
