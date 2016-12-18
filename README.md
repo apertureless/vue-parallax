@@ -1,4 +1,4 @@
-# vue-parallax
+# vue-parallaxy
 
 Is a compontent for fast 60fps parallax scroll effects in vue 2.
 
@@ -8,7 +8,7 @@ Is a compontent for fast 60fps parallax scroll effects in vue 2.
 
 ## Install
 
-`npm install vue-parallax` or `yarn add vue-parallax`
+`npm install vue-parallaxy` or `yarn add vue-parallaxy`
 
 ## Usage
 *vue-parallax* works with slots. So you can pass an image or even srcsets for better mobile experiences.
@@ -23,7 +23,7 @@ Is a compontent for fast 60fps parallax scroll effects in vue 2.
 </template>
 
 <script>
-  import Parallax from 'vue-parallax'
+  import Parallax from 'vue-parallaxy'
   export default {
     components: {
       Parallax
