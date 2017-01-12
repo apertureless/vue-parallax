@@ -1,9 +1,11 @@
 var vue = require('vue-loader')
 var path = require('path')
+var config = require('../config')
+var utils = require('./utils')
 var webpack = require("webpack")
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var projectRoot = path.resolve(__dirname, '../')
-var cssLoader = ExtractTextPlugin.extract('style-loader', 'css-loader')
+// var cssLoader = ExtractTextPlugin.extract('style-loader', 'css-loader')
 
 module.exports = {
   entry: {
@@ -38,19 +40,16 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel'
-      },
-      {
-        test: /\.css$/,
-        loader: cssLoader
-      },
-      {
-        test: /\.s[a|c]ss$/,
-        loader: ExtractTextPlugin.extract('style-loader','css-loader!sass-loader')
       }
     ]
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
+  },
+  vue: {
+    loaders: utils.cssLoaders({
+      sourceMap: config.build.productionSourceMap
+    })
   },
   babel: {
     presets: ['es2015'],
@@ -73,6 +72,6 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.OccurenceOrderPlugin()
-    // new ExtractTextPlugin('build.css')
+    // new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
   ]
 }
