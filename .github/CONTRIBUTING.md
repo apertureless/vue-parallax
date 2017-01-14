@@ -1,4 +1,4 @@
-Thank you for contributing vue-chartjs!
+Thank you for contributing vue-parallax!
 =========================================
 
 Please follow this steps:
