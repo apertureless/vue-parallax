@@ -45,7 +45,14 @@ Is a compontent for fast 60fps parallax scroll effects in vue 2.
 | fixed | Boolean | false | Other parallax effect. Image is fixed in position |
 | sectionHeight | Number | 70 | section height for mobile |
 | breakpoint | String | '(min-width: 968px)' | Media query for mobile deactivation |
+| sectionClass | String | 'Masthead' | CSS class of the outer section tag |
+| containerClass | String | 'Masthead__image' | CSS class of the container holding the  image |
+| parallaxClass | String | 'is-parallax' | Modifier class for the parallax effect |
+| fixedClass | String | 'is-fixed' | Modifier class for the fixed parallax effect |
 
+## Customizing
+
+You can change some of the behavior by changing the css classes. To be more clean, you can change them over the props. No need to overwrite or `!important` the existing classes.
 
 ## Build Setup
 
