@@ -460,6 +460,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	      default: 70,
 	      type: Number,
 	      required: false
+	    },
+	    sectionClass: {
+	      type: String,
+	      default: 'Masthead'
+	    },
+	    containerClass: {
+	      type: String,
+	      default: 'Masthead__image'
+	    },
+	    parallaxClass: {
+	      type: String,
+	      default: 'is-parallax'
+	    },
+	    fixedClass: {
+	      type: String,
+	      default: 'is-fixed'
 	    }
 	  },
 
@@ -530,16 +546,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;
 	  return _c('section', {
 	    ref: "block",
-	    staticClass: "Masthead",
+	    class: [_vm.sectionClass],
 	    style: ({
 	      height: _vm.sectionHeight + 'vh'
 	    })
 	  }, [_c('div', {
 	    ref: "parallax",
-	    staticClass: "Masthead__image",
-	    class: {
-	      'is-parallax': _vm.parallax, 'is-fixed': _vm.fixed
-	    }
+	    class: [_vm.parallax ? _vm.parallaxClass : '', _vm.fixed ? _vm.fixedClass : '', _vm.containerClass]
 	  }, [_vm._t("default")], 2)])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
