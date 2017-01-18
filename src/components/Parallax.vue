@@ -1,6 +1,9 @@
 <template>
-  <section class="Masthead" ref="block" v-bind:style="{ height: sectionHeight + 'vh' }">
-    <div class="Masthead__image" v-bind:class="{'is-parallax': parallax, 'is-fixed': fixed }" ref="parallax">
+  <section v-bind:class="[sectionClass]" ref="block" v-bind:style="{ height: sectionHeight + 'vh' }">
+    <div
+      v-bind:class="[parallax ? parallaxClass : '', fixed ? fixedClass : '', containerClass]"
+      ref="parallax"
+      >
       <slot></slot>
     </div>
   </section>
@@ -29,6 +32,22 @@
         default: 70,
         type: Number,
         required: false
+      },
+      sectionClass: {
+        type: String,
+        default: 'Masthead'
+      },
+      containerClass: {
+        type: String,
+        default: 'Masthead__image'
+      },
+      parallaxClass: {
+        type: String,
+        default: 'is-parallax'
+      },
+      fixedClass: {
+        type: String,
+        default: 'is-fixed'
       }
     },
 
