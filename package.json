@@ -1,6 +1,6 @@
 {
   "name": "vue-parallaxy",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "Vue 2 component for parallax scrolling effects",
   "author": "Jakub Juszczak <jakub@posteo.de>",
   "repository": {
