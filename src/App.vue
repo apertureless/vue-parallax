@@ -16,7 +16,7 @@
       <parallax :fixed="true">
         <img src="static/img/pexels-photo-196416.jpeg">
       </parallax>
-    <div>
+    </div>
 
     <div style="background-color: #fff; height: 100vh;"></div>
   </div>
