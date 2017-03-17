@@ -14,7 +14,8 @@ module.exports = {
   output: {
     filename: './dist/[name].js',
     library: 'VueParallaxy',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     preLoaders: [
