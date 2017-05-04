@@ -1,12 +1,12 @@
 <template>
-  <section v-bind:class="[sectionClass]" ref="block" v-bind:style="{ height: sectionHeight + 'vh' }">
+  <div v-bind:class="[sectionClass]" ref="block" v-bind:style="{ height: sectionHeight + 'vh' }">
     <div
       v-bind:class="[parallax ? parallaxClass : '', fixed ? fixedClass : '', containerClass]"
       ref="parallax"
       >
       <slot></slot>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -48,6 +48,10 @@
       fixedClass: {
         type: String,
         default: 'is-fixed'
+      },
+      direction: {
+        type: String,
+        default: 'up'
       }
     },
 
@@ -80,7 +84,7 @@
         let animationValue = (window.pageYOffset * this.speedFactor)
 
         if (animationValue <= availableOffset && animationValue >= 0) {
-          this.el.style.transform = `translate3d(0, ${animationValue * -1}px ,0)`
+          this.el.style.transform = `translate3d(0, ${animationValue * 1}px ,0)`
         }
       },
 
@@ -117,6 +121,12 @@
           this.setupListener()
         }
       }
+    },
+
+    computed: {
+      directionValue () {
+        return this.direction === 'down' ? +1 : -1
+      }
     }
   }
 </script>
@@ -144,7 +154,7 @@
       height: 100%;
       max-width: none;
       width: 100%;
-      @include object-fit(cover, bottom);
+      @include object-fit(cover, top);
     }
 
     &.is-parallax {
@@ -158,7 +168,7 @@
         height: 100%;
         max-width: none;
         width: 100%;
-        @include object-fit(cover, bottom);
+        @include object-fit(cover, top);
       }
     }
 
