@@ -174,6 +174,7 @@
 
     &.is-fixed {
       position: fixed;
+      will-change: transform;
 
       > img {
         height: 100vh;
