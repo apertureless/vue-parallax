@@ -1,6 +1,6 @@
 {
   "name": "vue-parallaxy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vue 2 component for parallax scrolling effects",
   "author": "Jakub Juszczak <jakub@posteo.de>",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "release": "webpack --progress --hide-modules --config  ./build/webpack.release.js && NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.min.js",
-    "prepublish": "yarn run lint && yarn run build"
+    "prepublishOnly": "yarn run lint && yarn run build"
   },
   "devDependencies": {
     "@nextindex/next-scss": "^1.1.0",
