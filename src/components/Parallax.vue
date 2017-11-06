@@ -123,6 +123,10 @@
       }
     },
 
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.scrollHandler, false)
+    },
+
     computed: {
       directionValue () {
         return this.direction === 'down' ? +1 : -1
