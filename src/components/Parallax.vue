@@ -24,6 +24,10 @@
         default: false,
         type: Boolean
       },
+      direction: {
+        default: 'down',
+        type: String
+      },
       breakpoint: {
         default: '(min-width: 968px)',
         type: String
@@ -82,9 +86,17 @@
         const parallaxHeight = this.$refs.parallax.offsetHeight
         const availableOffset = parallaxHeight - parentHeight
         let animationValue = (window.pageYOffset * this.speedFactor)
+        
+        // check direction if passed via props, otherwise set to downwards
+        let direction = 1 // image scrolls downwards
+        if (this.direction === 'down') {
+          direction = 1;
+        } else if (this.direction === 'up') {
+          direction = -1;
+        }
 
         if (animationValue <= availableOffset && animationValue >= 0) {
-          this.el.style.transform = `translate3d(0, ${animationValue * 1}px ,0)`
+          this.el.style.transform = `translate3d(0, ${animationValue * direction}px ,0)`
         }
       },
 
