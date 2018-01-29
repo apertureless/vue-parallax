@@ -42,6 +42,7 @@ Is a compontent for fast 60fps parallax scroll effects in vue 2.
 |----------|:-------------:|------|------|
 | parallax |  Boolean | true | Activates parallax effect |
 | speedFactor |  Number   | 0.15 | factor on how strong the effect is|
+| direction |  String   | 'down' | Either 'up' or 'down', determines scroll direction of image |
 | fixed | Boolean | false | Other parallax effect. Image is fixed in position |
 | sectionHeight | Number | 70 | section height for mobile |
 | breakpoint | String | '(min-width: 968px)' | Media query for mobile deactivation |
