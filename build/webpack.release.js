@@ -5,7 +5,14 @@ var utils = require('./utils')
 var webpack = require("webpack")
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var projectRoot = path.resolve(__dirname, '../')
+const npmCfg = require('../package.json')
 // var cssLoader = ExtractTextPlugin.extract('style-loader', 'css-loader')
+
+var banner = [
+  npmCfg.name + ' v' + npmCfg.version,
+  '(c) ' + (new Date().getFullYear()) + ' ' + npmCfg.author,
+  npmCfg.homepage
+].join('\n')
 
 module.exports = {
   entry: {
@@ -72,7 +79,8 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.BannerPlugin(banner)
     // new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
   ]
 }
