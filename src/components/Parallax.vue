@@ -84,7 +84,7 @@
         let animationValue = (window.pageYOffset * this.speedFactor)
 
         if (animationValue <= availableOffset && animationValue >= 0) {
-          this.el.style.transform = `translate3d(0, ${animationValue * 1}px ,0)`
+          this.el.style.transform = `translate3d(0, ${animationValue * this.directionValue}px ,0)`
         }
       },
 
