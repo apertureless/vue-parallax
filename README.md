@@ -16,7 +16,7 @@ Is a compontent for fast 60fps parallax scroll effects in vue 2.
 ## Usage
 *vue-parallax* works with slots. So you can pass an image or even srcsets for better mobile experiences.
 
-```javascript
+```html
 // Image.vue
 
 <template>
