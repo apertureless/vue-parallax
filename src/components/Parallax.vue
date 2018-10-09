@@ -52,13 +52,19 @@
       direction: {
         type: String,
         default: 'up'
+      },
+      customWrapperReference: {
+        type: String,
+        default: '',
+        required: false
       }
     },
 
     data () {
       return {
         el: null,
-        mediaQuery: null
+        mediaQuery: null,
+        scrollWrapper: null
       }
     },
 
@@ -81,7 +87,13 @@
         const parentHeight = this.$refs.block.offsetHeight
         const parallaxHeight = this.$refs.parallax.offsetHeight
         const availableOffset = parallaxHeight - parentHeight
-        let animationValue = (window.pageYOffset * this.speedFactor)
+        let animationValue
+
+        if (this.customWrapperReference) {
+          animationValue = (this.scrollWrapper.scrollTop * this.speedFactor)
+        } else {
+          animationValue = (this.scrollWrapper.pageYOffset * this.speedFactor)
+        }
 
         if (animationValue <= availableOffset && animationValue >= 0) {
           this.el.style.transform = `translate3d(0, ${animationValue * this.directionValue}px ,0)`
@@ -101,20 +113,26 @@
 
         return (
           rect.bottom >= 0 &&
-          rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+          rect.top <= (this.scrollWrapper.innerHeight || document.documentElement.clientHeight)
         )
       },
 
       setupListener () {
         if (this.mediaQuery.matches) {
-          window.addEventListener('scroll', this.scrollHandler, false)
+          this.scrollWrapper.addEventListener('scroll', this.scrollHandler, false)
         } else {
-          window.removeEventListener('scroll', this.scrollHandler, false)
+          this.scrollWrapper.removeEventListener('scroll', this.scrollHandler, false)
         }
       },
 
       init () {
         this.mediaQuery = window.matchMedia(this.breakpoint)
+
+        if (this.customWrapperReference) {
+          this.scrollWrapper = document.querySelector(this.customWrapperReference)
+        } else {
+          this.scrollWrapper = window
+        }
 
         if (this.mediaQuery) {
           this.mediaQuery.addListener(this.setupListener)
@@ -124,7 +142,7 @@
     },
 
     beforeDestroy () {
-      window.removeEventListener('scroll', this.scrollHandler, false)
+      this.scrollWrapper.removeEventListener('scroll', this.scrollHandler, false)
     },
 
     computed: {
