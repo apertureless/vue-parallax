@@ -1,12 +1,12 @@
 <template>
-  <div v-bind:class="[sectionClass]" ref="block" v-bind:style="{ height: sectionHeight + 'vh' }">
+  <section v-bind:class="[sectionClass]" ref="block" v-bind:style="{ height: sectionHeight + 'vh' }">
     <div
       v-bind:class="[parallax ? parallaxClass : '', fixed ? fixedClass : '', containerClass]"
       ref="parallax"
       >
       <slot></slot>
     </div>
-  </div>
+  </sextion>
 </template>
 
 <script>
