@@ -8,6 +8,9 @@
       <parallax>
         <img src="static/img/pexels-photo-241307.jpeg">
       </parallax>
+      <parallax>
+        <img src="static/img/pexels-photo-3977529.jpg">
+      </parallax>
     </div>
     <div style="background-color: #fff; height: 100vh;"></div>
     <h1>Parallax fixed position </h1>
