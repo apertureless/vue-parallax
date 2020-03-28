@@ -81,7 +81,8 @@
         const parentHeight = this.$refs.block.offsetHeight
         const parallaxHeight = this.$refs.parallax.offsetHeight
         const availableOffset = parallaxHeight - parentHeight
-        let animationValue = (window.pageYOffset * this.speedFactor)
+        const scrollOffset = (this.$refs.block.offsetHeight - this.$refs.block.getBoundingClientRect().top)
+        let animationValue = (scrollOffset * this.speedFactor)
 
         if (animationValue <= availableOffset && animationValue >= 0) {
           this.el.style.transform = `translate3d(0, ${animationValue * this.directionValue}px ,0)`
