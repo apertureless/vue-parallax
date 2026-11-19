@@ -1,11 +1,11 @@
 # vue-parallaxy
 [![npm version](https://badge.fury.io/js/vue-parallaxy.svg)](https://badge.fury.io/js/vue-parallaxy)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+[![vue3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://vuejs.org/)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/apertureless/vue-parallax/blob/master/LICENSE.txt)
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C1WP7C)
 
-Is a compontent for fast 60fps parallax scroll effects in vue 2.
+Is a component for fast 60fps parallax scroll effects in Vue 3.
 
 ## Demo
 
@@ -15,11 +15,15 @@ Is a compontent for fast 60fps parallax scroll effects in vue 2.
 
 `npm install vue-parallaxy` or `yarn add vue-parallaxy`
 
+Peer dependency: `vue` `^3.2.0`
+
+Vue 2 projects should stay on `vue-parallaxy@1`.
+
 ## Usage
 *vue-parallax* works with slots. So you can pass an image or even srcsets for better mobile experiences.
 
 ```html
-// Image.vue
+<!-- Image.vue -->
 
 <template>
   <parallax>
@@ -29,6 +33,8 @@ Is a compontent for fast 60fps parallax scroll effects in vue 2.
 
 <script>
   import Parallax from 'vue-parallaxy'
+  import 'vue-parallaxy/style.css'
+
   export default {
     components: {
       Parallax
@@ -63,10 +69,10 @@ You can change some of the behavior by changing the css classes. To be more clea
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:5173
 npm run dev
 
-# build for production with minification
+# build library for production
 npm run build
 
 # run unit tests
@@ -75,9 +81,6 @@ npm run unit
 # run all tests
 npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
 
 ## Contributing
 
